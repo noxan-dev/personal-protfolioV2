@@ -1,0 +1,33 @@
+
+body,
+html {
+    font-family: "Agency FB", sans-serif;
+    margin: 0;
+}
+
+nav {
+    font-size: 2rem;
+}
+
+h1 {
+    color: #fffffe;
+    font-size: 3rem;
+}
+
+p {
+    color: #94a1b2;
+    font-size: 2rem;
+}
+
+#about-me,
+#introduction{
+    background-color: #16161a;
+    margin: 0;
+    height: 100vh;
+}
+
+#work {
+    background-color: #242629;
+    margin: 0;
+    height: 100vh;
+}
