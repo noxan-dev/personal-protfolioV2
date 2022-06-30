@@ -1,2 +1,3 @@
-# personal-protfolioV2
-Personal Portfolio V2
+# Personal Portfolio V2
+
+Built with Flask and TailwindCSS
