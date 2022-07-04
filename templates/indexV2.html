@@ -1,32 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--suppress HtmlUnknownTarget -->
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;900&display=swap"
+          rel="stylesheet">
     <title>Chaim's Portfolio</title>
 </head>
-{% include 'navbar.html' %}
+
 <body>
+{% include 'navbar.html' %}
 <div class="layout">
-    <section id="introduction" class="w-full">
-        <div class="p-3 shadow-md hover:shadow-inner shadow-[#94a1b2] opacity-75 rounded-md bg-slate-800 w-auto">
-            <h1>Who am I</h1>
-            <p>I am a Software Engineer and I love to code.</p>
+    <section id="introduction" class="bg-[#16161a]">
+        <div class="main px-10 pt-5 lg:px-20 lg:py-28 grid auto-rows-auto grid-flow-rows lg:auto-cols-auto lg:grid-flow-col">
+            <div class="justify-self-start">
+                <div class="intro-text h-full md:pl-24 lg:pr-24 lg:max-w-lg">
+                    <h1>Hello, I'm Chaim.</h1>
+                    <div class="rounded-md bg-[#242629] hover:animate-bounce p-3">
+                        <p>I'm a web developer who is passionate about creating beautiful and functional websites.</p>
+                        <p>I'm also a fan of the outdoors, and I love to travel.</p>
+                        <p class="italic text-[8px]">(yo, over here)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="justify-self-end">
+                <div class="synopsys pt-5 pb-10 md:pr-24 lg:pb-20 lg:pt-60 lg:max-w-lg">
+                    <h2 class="text-white text-2xl font-bold">I'm a</h2>
+                    <div class="p-3 shadow-md shadow-current hover:shadow-current hover:shadow-lg active:shadow-inner active:shadow-current rounded-md bg-[#242629] cursor-pointer">
+                        <p>
+                            I am a software engineer and photographer. I don't have much work to speak of, hopefully
+                            in the future that changes, but I'm doing small projects here and there, take a look at
+                            my
+                            GitHub for those. Below are some of my pictures I've taken but my Instagram is
+                            chock-full of
+                            more so follow me there. さよなら ✌🏻
+                        </p>
+                        <p class="italic text-[8px]">(psst click me)</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <section id="work">
         <div class="">
-            <h1>What I do</h1>
+            <h1>Things I'm working on</h1>
             <p>I am a Software Engineer and I love to code.</p>
         </div>
     </section>
-    <section id="about-me">
-        <div class="">
-            <h1>What I do</h1>
-            <p>I am a Software Engineer and I love to code.</p>
+    <footer id="about-me" class="bg-[#16161a]">
+        <div class="text-center h-full py-5">
+            <p>Connect</p>
+            <div class="flex flex-col lg:flex-row space-x-4 justify-center">
+                <a href="https://www.linkedin.com/in/chaimmalek/"><p class="hover:text-inherit">LinkedIn</p></a>
+                <a href="https://github.com/noxan-dev"><p class="hover:text-inherit">Github</p></a>
+                <a href="mailto:chaim.s.malek@gmail.com"><p class="hover:text-inherit">Email</p></a>
+                <a href="{{ url_for('static', filename='files/resume.pdf') }}"><p class="hover:text-inherit">Resume</p>
+                </a>
+            </div>
+            <p class="text-sm inset-x-0 bottom-0 top-full">Noxan &copy; {{ year }}</p>
         </div>
-    </section>
+    </footer>
 </div>
 <script src="https://cdn.tailwindcss.com"></script>
 </body>
