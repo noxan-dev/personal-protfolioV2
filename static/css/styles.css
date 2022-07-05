@@ -17,63 +17,6 @@ p {
     font-size: 2rem;
 }
 
-li, a, button {
-    font-family: "Agency FB", sans-serif;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #fffffe;
-    text-decoration: none;
-}
-
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background-color: #3e0762;
-    color: #fffffe;
-}
-
-li, a {
-    color: #fffffe;
-    text-decoration: none;
-}
-
-.logo {
-    margin-right: auto;
-}
-
-.nav-list {
-    list-style: none;
-}
-
-.nav-list li {
-    display: inline-block;
-    padding: 0 20px;
-}
-
-.nav-list li a {
-    transition: all 0.3s ease 0s;
-}
-
-.nav-list li a:hover {
-    color: #000000;
-}
-
-button {
-    padding: 9px 25px;
-    border: none;
-    background-color: #000000 !important;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-}
-
-button:hover {
-   color: #450c0c;
-}
-
 #work {
     background-color: #242629;
     height: 100vh;
