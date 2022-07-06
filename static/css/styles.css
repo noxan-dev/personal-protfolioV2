@@ -1,9 +1,13 @@
 
 * {
-    font-family: 'Playfair Display', serif;
     box-sizing: border-box;
+    -moz-box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
 }
 
 h1 {
@@ -20,14 +24,10 @@ h2 {
 
 p {
     color: #94a1b2;
-    font-size: 2.2rem;
+    font-size: 1.5rem;
 }
 
 #work {
     background-color: #242629;
     height: 100vh;
 }
-
-
-
-
