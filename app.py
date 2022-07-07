@@ -24,5 +24,17 @@ def redesign():
     return render_template('indexV2.html', year=year)
 
 
+@app.route('/about')
+# @cache.cached(timeout=60)
+def about():
+    return render_template('about.html')
+
+
+@app.route('/contact')
+# @cache.cached(timeout=60)
+def contact():
+    return render_template('contact.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True, host='192.168.1.229', port=5000)

@@ -1,35 +1,16 @@
-<!DOCTYPE html>
-<!--suppress HtmlUnknownTarget -->
-<html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="software">
-    <link rel="apple-touch-icon" sizes="180x180"
-          href="{{ url_for('static', filename='images/favicon/apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32"
-          href="{{ url_for('static', filename='images/favicon/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16"
-          href="{{ url_for('static', filename='images/favicon/favicon-16x16.png') }}">
-    <link rel="manifest" href="{{ url_for('static', filename='images/favicon/site.webmanifest') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;900&display=swap"
-          rel="stylesheet">
-    <title>Chaim's Portfolio</title>
-</head>
+{% extends 'base.html' %}
 
-<body>
-<div class="layout">
+{% block title %}Home{% endblock title %}
+
+
+{% block content %}
     <section id="introduction" class="bg-[#16161a]">
-        {% include 'navbar.html' %}
-        <div class="main px-5 py-5 grid gap-4 grid-rows-auto grid-flow-rows lg:grid-cols-auto lg:grid-flow-col h-fit">
+        <div class="main px-5 pt-8 pb-16 grid gap-4 grid-rows-auto grid-flow-rows lg:grid-cols-auto lg:grid-flow-col h-fit">
             <div class="place-self-center">
-                <div class="intro-text md:pl-24 lg:pr-24 lg:max-w-lg">
+                <div class="intro-text lg:px-24 lg:max-w-lg">
                     <div class="text-center">
                         <h1>Hello, I'm <span
-                                class="name animate-[pulse_4s_ease-in-out_infinite] underline decoration-wavy decoration-4 decoration-purple-900 underline-offset-4">Chaim</span>.
+                                class="animate-[pulse_4s_ease-in-out_infinite] underline decoration-wavy decoration-4 decoration-purple-900 underline-offset-4">Chaim</span>.
                         </h1>
                         <h2 class="pt-2">Software Engineer</h2>
                         <hr class="border-b-2 rounded bg-gray-600 border-gray-600 mx-auto w-3/5">
@@ -37,25 +18,28 @@
                     </div>
                 </div>
             </div>
-            <div class="grid gap-4 grid-rows-auto grid-flow-rows">
+            <div class="grid gap-4 grid-rows-auto grid-flow-rows lg:mr-24">
                 <div class="place-self-start">
                     <div class="synopsys lg:max-w-xl">
                         <h2>Who am I</h2>
-                        <div class="p-3 shadow-md shadow-current hover:shadow-current hover:shadow-lg active:shadow-inner active:shadow-current rounded-md bg-[#242629] cursor-pointer">
+                        <div class="p-3 shadow-md shadow-current lg:hover:shadow-current lg:hover:shadow-lg lg:active:shadow-inner lg:active:shadow-current rounded-md bg-[#242629] cursor-pointer">
                             <p>
-                                I am a Software Engineer who is enthusiastic about developing attractive and functional
+                                I am a <span
+                                    class="underline decoration-wavy decoration-3 decoration-blue-800 underline-offset-4">Software Engineer</span>
+                                who is enthusiastic about developing attractive and functional
                                 websites and programs. Thank you for dropping by. さよなら ✌🏻
                             </p>
-                            <p class="italic text-[8px]">(psst click me)</p>
+                            <p class="italic text-[8px] invisible lg:visible">(psst click me)</p>
                         </div>
                     </div>
                 </div>
                 <div class="place-self-end">
                     <div class="synopsys pt-5 lg:max-w-xl place-self-end">
-                        <div class="p-3 shadow-md shadow-current rounded-md bg-[#242629] hover:animate-bounce">
-                            <p>In addition to being a SE, I am a landscape photographer passionate about capturing the
-                                best
-                                moments of life and using them to inspire my work.</p>
+                        <div class="p-3 shadow-md shadow-current rounded-md bg-[#242629] lg:hover:animate-bounce">
+                            <p>In addition to being a SE, I am a landscape <span
+                                    class="underline decoration-wavy decoration-3 decoration-emerald-900 underline-offset-4">photographer</span>
+                                passionate about capturing the best moments of life and using them to inspire my work.
+                            </p>
                             <p>I also enjoy being outside and exploring new places.</p>
                         </div>
                     </div>
@@ -63,38 +47,18 @@
             </div>
         </div>
     </section>
-    <section id="work">
-        <div class="px-10 pt-5 lg:px-20 lg:py-28 h-screen">
+    <section id="work" class="bg-[#242629]">
+        <div class="px-10 pt-5 lg:px-20 lg:py-28 h-full">
             <div class="md:pl-24 lg:pr-24 lg:max-w-lg text-center">
                 <h1>Things I'm working on</h1>
             </div>
         </div>
     </section>
-    <footer id="about-me" class="bg-[#16161a]">
-        <div class="text-center text py-4 justify-center">
-            <div class="grid gap-y-2 grid-rows-auto grid-flow-rows lg:grid-cols-auto lg:grid-rows-3 lg:grid-flow-col">
-                <div>
-                    <p>Connect</p>
-                    <hr class="border-b-2 rounded bg-gray-600 border-gray-600 mx-auto w-20">
-                </div>
-                <div class="mx-auto grid lg:gap-3 lg:grid-cols-auto lg:grid-flow-col">
-                    <a href="https://www.linkedin.com/in/chaimmalek/"><p
-                            class="text-white md:hover:bg-transparent hover:text-gray-400">LinkedIn</p></a>
-                    <a href="https://github.com/noxan-dev"><p
-                            class="text-white md:hover:bg-transparent hover:text-gray-400">Github</p></a>
-                    <a href="mailto:chaim.s.malek@gmail.com"><p
-                            class="text-white md:hover:bg-transparent hover:text-gray-400">Email</p></a>
-                    <a href="{{ url_for('static', filename='files/resume.pdf') }}"><p
-                            class="text-white md:hover:bg-transparent hover:text-gray-400">Resume</p>
-                    </a>
-                </div>
-                <p class="text-sm inset-x-0 bottom-0 top-full">Noxan &copy; {{ year }}</p>
+    <section id="gallery" class="bg-[#16161a]">
+        <div class="px-10 pt-5 lg:px-20 lg:py-28 h-full">
+            <div class="md:pl-24 lg:pr-24 lg:max-w-lg text-center">
+                <h1 class="text-center">Gallery</h1>
             </div>
         </div>
-    </footer>
-</div>
-<script src="{{ url_for('static', filename='js/index.js') }}"></script>
-<script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
-<script src="https://cdn.tailwindcss.com"></script>
-</body>
-</html>
+    </section>
+{% endblock content %}

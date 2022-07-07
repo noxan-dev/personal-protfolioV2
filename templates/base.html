@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="software">
+    <link rel="apple-touch-icon" sizes="180x180"
+          href="{{ url_for('static', filename='images/favicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32"
+          href="{{ url_for('static', filename='images/favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16"
+          href="{{ url_for('static', filename='images/favicon/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='images/favicon/site.webmanifest') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;900&display=swap"
+          rel="stylesheet">
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+
+<body>
+<div class="layout">
+{% block navbar %}{% include 'navbar.html' %}{% endblock navbar %}
+
+{% block content %}
+
+
+{% endblock content %}
+</div>
+<div class="border-t border-[#242629]">
+    <footer id="footer" class="bg-[#16161a]">
+        <div class="text-center text py-4 justify-center">
+            <div class="grid gap-y-2 grid-rows-auto grid-flow-rows lg:grid-cols-auto lg:grid-rows-3 lg:grid-flow-col">
+                <div>
+                    <p>Connect</p>
+                    <hr class="border-b-2 rounded bg-gray-600 border-gray-600 mx-auto w-20">
+                </div>
+                <div class="mx-auto grid lg:gap-3 lg:grid-cols-auto lg:grid-flow-col">
+                    <a href="https://www.linkedin.com/in/chaimmalek/"><p
+                            class="text-white md:hover:bg-transparent hover:text-gray-400">LinkedIn</p></a>
+                    <a href="https://github.com/noxan-dev"><p
+                            class="text-white md:hover:bg-transparent hover:text-gray-400">Github</p></a>
+                    <a href="mailto:chaim.s.malek@gmail.com"><p
+                            class="text-white md:hover:bg-transparent hover:text-gray-400">Email</p></a>
+                    <a href="{{ url_for('static', filename='files/resume.pdf') }}"><p
+                            class="text-white md:hover:bg-transparent hover:text-gray-400">Resume</p>
+                    </a>
+                </div>
+                <p class="text-sm inset-x-0 bottom-0 top-full">Noxan &copy; {{ year }}</p>
+            </div>
+        </div>
+    </footer>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+<script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
+</body>
+</html>
+
