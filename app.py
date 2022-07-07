@@ -1,23 +1,16 @@
 from flask import Flask, render_template
 from flask_caching import Cache
 from datetime import datetime
+import os
+
 
 cache = Cache(config={'CACHE_TYPE': 'simple'})
 app = Flask(__name__)
-
 cache.init_app(app)
-app.config['TESTING'] = True
-app.config['SECRET_KEY'] = 'secret!'
-TEMPLATES_AUTO_RELOAD = True
+app.config['SECRET_KEY'] = os.environ['SECRET_KEY']
 
 
 @app.route('/')
-@cache.cached(timeout=60)
-def home():
-    return render_template('index.html')
-
-
-@app.route('/redesign')
 # @cache.cached(timeout=60)
 def redesign():
     year = datetime.now().year
@@ -37,4 +30,4 @@ def contact():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='192.168.1.229', port=5000)
+    app.run()
