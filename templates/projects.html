@@ -6,16 +6,19 @@
 
 {% block content %}
     <div class="bg-[#16161a]">
-        <div class="px-5 pt-8 pb-16 grid gap-5 auto-rows-auto grid-flow-row lg:grid-cols-4 w-full">
-            {% for repo in repos %}
-                <a href="{{ repo.html_url }}">
-                    <div class="p-3 shadow-md shadow-current lg:hover:shadow-current lg:hover:shadow-lg rounded-md bg-[#242629] lg:max-w-lg">
-                        <h3 class="text-center">{{ repo.name | safe | remove_dashes | upper }}</h3>
-                        <hr class="border-b-1 rounded bg-gray-600 border-gray-600 mx-auto">
-                        <p>{{ repo.description }}</p>
-                    </div>
-                </a>
-            {% endfor %}
+        <div class="px-5 pt-8 pb-16 grid gap-5 grid-rows-auto grid-flow-row w-full">
+            <h1>Previously worked on Projects</h1>
+            <div class="grid gap-5 grid-rows-2 grid-flow-row lg:grid-cols-4 lg:grid-rows-2 w-full">
+                {% for repo in repos %}
+                    <a href="{{ repo.html_url }}">
+                        <div class="p-3 shadow-md shadow-current lg:hover:shadow-current lg:hover:shadow-lg rounded-md bg-[#242629] lg:max-w-lg">
+                            <h3 class="text-center">{{ repo.name | safe | remove_dashes | upper }}</h3>
+                            <hr class="border-b-1 rounded bg-gray-600 border-gray-600 mx-auto">
+                            <p>{{ repo.description }}</p>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
         </div>
     </div>
 

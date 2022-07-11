@@ -48,10 +48,7 @@ def about():
 def projects():
     response = requests.get('https://api.github.com/users/noxan-dev/repos')
     repos_json = response.json()
-    repo_names = []
-    for repo in repos_json:
-        repo_names.append(repo['name'])
-    return render_template('projects.html', repos=repos_json, repo_names=repo_names)
+    return render_template('projects.html', repos=repos_json)
 
 
 if __name__ == '__main__':
