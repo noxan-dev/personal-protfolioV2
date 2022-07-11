@@ -8,7 +8,7 @@
     <div class="bg-[#16161a]">
         <div class="px-5 pt-8 pb-16 grid gap-5 grid-rows-auto grid-flow-row w-full">
             <h1>Previously worked on Projects</h1>
-            <div class="grid gap-5 grid-rows-2 grid-flow-row lg:grid-cols-4 lg:grid-rows-2 w-full">
+            <div class="grid gap-5 grid-rows-auto grid-flow-row lg:grid-cols-4 w-full">
                 {% for repo in repos %}
                     <a href="{{ repo.html_url }}">
                         <div class="p-3 shadow-md shadow-current lg:hover:shadow-current lg:hover:shadow-lg rounded-md bg-[#242629] lg:max-w-lg">
