@@ -44,7 +44,7 @@ def about():
 
 
 @app.route('/projects')
-@cache.cached(timeout=60)
+# @cache.cached(timeout=60)
 def projects():
     response = requests.get('https://api.github.com/users/noxan-dev/repos')
     repos_json = response.json()
