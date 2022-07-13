@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, flash, redirect, url_for, request
 from flask_caching import Cache
 from datetime import datetime
 import os
@@ -30,10 +30,21 @@ def upper(string):
     return string.title()
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 # @cache.cached(timeout=60)
 def redesign():
     year = datetime.now().year
+
+    if request.method == 'POST':
+        name = request.form['name']
+        email = request.form['email']
+        message = request.form['message']
+        if name == '' or email == '' or message == '':
+            flash('Please fill in all fields.')
+            return redirect(url_for('redesign'))
+        else:
+            flash('Message sent!')
+            return redirect(url_for('redesign'))
     return render_template('indexV2.html', year=year)
 
 

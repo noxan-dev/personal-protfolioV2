@@ -2,10 +2,9 @@
     <nav class="bg-white px-2 sm:px-4 py-2.5 dark:bg-[#16161a] border-b border-[#242629]">
         <div id="collapse"
              class="container flex flex-wrap justify-between items-center mx-auto px-5 py-2">
-            <a href="" class="flex items-center">
+            <a href="{{ url_for('redesign') }}" class="flex items-center" title="Chaim's Site">
                 <img src="{{ url_for('static', filename='images/logo.png') }}" class="mr-3 h-6 sm:h-9 text-white"
                      alt="Logo">
-                <span class="self-center text-xl font-semibold whitespace-nowrap text-white">Chaim's Site</span>
             </a>
             <button data-collapse-toggle="mobile-menu" type="button"
                     class="transition-all inline-flex items-center p-2 ml-3 text-sm text-white rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -28,7 +27,7 @@
                            class="{{ 'bg-blue-700 lg:text-gray-400' if active_page == 'about' }} block py-2 pr-4 pl-3 rounded lg:bg-transparent lg:p-0 text-white hover:text-gray-400">About</a>
                     </li>
                     <li>
-                        <a href="#contact"
+                        <a href="{{ url_for('redesign') }}#contact"
                            class="block py-2 pr-4 pl-3 rounded lg:bg-transparent lg:p-0 text-white hover:text-gray-400">Contact</a>
                     </li>
                     <li>

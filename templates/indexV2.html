@@ -6,20 +6,32 @@
 
 {% block content %}
     <section id="introduction" class="bg-[#16161a]">
-        <div class="main px-5 pt-8 pb-16 grid gap-5 grid-rows-auto grid-flow-rows lg:grid-cols-auto lg:grid-flow-col h-fit w-full">
-            <div class="place-self-center text-center">
-                <div class="intro-text lg:px-24 lg:max-w-lg">
-                    <h1>Hello, I'm <span
-                            class="animate-[pulse_4s_ease-in-out_infinite] underline decoration-wavy decoration-4 decoration-purple-900 underline-offset-4">Chaim</span>.
-                    </h1>
-                    <h2 class="pt-2">Software Engineer</h2>
-                    <hr class="border-b-2 rounded bg-gray-600 border-gray-600 mx-auto w-3/5">
-                    <h2>Photographer</h2>
-                </div>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class=flashes>
+                    {% for message in messages %}
+                        <li><p class="text-center">{{ message }}</p></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        <div class="main px-5 py-28 grid gap-5 grid-rows-auto grid-flow-rows lg:grid-cols-auto lg:grid-flow-col h-fit w-full place-items-center">
+            <div class="w-50 h-50 lg:w-96 lg:h-96">
+                <img src="{{ url_for('static', filename='images/headshot.jpg') }}"
+                     class="border-8 border-dashed lg:hover:border-solid border-violet-900 rounded-full" alt="headshot">
             </div>
-            <div class="grid gap-10 grid-rows-auto grid-flow-rows lg:mr-24">
-                <div class="place-self-start">
-                    <div class="synopsys lg:max-w-xl">
+            <div class="intro-text text-center lg:px-14 lg:max-w-xl">
+                <h1>Hello, I'm <span
+                        class="animate-[pulse_4s_ease-in-out_infinite] underline decoration-wavy decoration-4 decoration-purple-900 underline-offset-4">Chaim</span>.
+                </h1>
+                <h2 class="pt-2">Software Engineer</h2>
+                <hr class="border-b-2 rounded bg-gray-600 border-gray-600 mx-auto w-3/5">
+                <h2>Photographer</h2>
+            </div>
+            <div class="grid gap-10 grid-rows-auto grid-flow-rows">
+                <div class="">
+                    <div class="synopsys lg:max-w-lg">
                         <h2>Who am I</h2>
                         <div class="p-3 shadow-md shadow-current lg:hover:shadow-current lg:hover:shadow-lg lg:active:shadow-inner lg:active:shadow-current rounded-md bg-[#242629] cursor-pointer">
                             <p>
@@ -30,16 +42,21 @@
                             </p>
                             <p class="italic text-[8px] invisible lg:visible">(psst click me)</p>
                         </div>
-                    </div>
-                </div>
-                <div class="place-self-end">
-                    <div class="synopsys lg:max-w-xl place-self-end">
-                        <div class="p-3 shadow-md shadow-current rounded-md bg-[#242629] lg:hover:animate-bounce">
-                            <p>In addition to being a SE, I am a landscape <span
-                                    class="underline decoration-wavy decoration-3 decoration-emerald-900 underline-offset-4">photographer</span>
-                                passionate about capturing the best moments of life and using them to inspire my work.
-                            </p>
-                            <p>I also enjoy being outside and exploring new places.</p>
+                        <div class="text-center pt-5 grid gap-5 auto-cols-auto grid-flow-col">
+                            <p><a href="https://www.linkedin.com/in/chaimmalek/"><i
+                                    class="bi bi-linkedin text-white md:hover:bg-transparent hover:text-gray-400"
+                                    title="Linkedin"></i></a></p>
+                            <p><a href="https://github.com/noxan-dev"><i
+                                    class="bi bi-github text-white md:hover:bg-transparent hover:text-gray-400"
+                                    title="Github"></i></a></p>
+                            <p><a href="https://www.instagram.com/cma1ek/"><i
+                                    class="bi bi-instagram text-white md:hover:bg-transparent hover:text-gray-400"
+                                    title="Instagram"></i></a></p>
+                            <p>
+                                <a href="https://docs.google.com/document/d/e/2PACX-1vRSF8SVTkfuoKIszoOgRfr4_WnmSvEcY9hjnSbF7OGKOH5hFdSik9U65miZKM5b4g/pub"><i
+                                        class="bi bi-file-person text-white md:hover:bg-transparent hover:text-gray-400"
+                                        title="Resume"></i>
+                                </a></p>
                         </div>
                     </div>
                 </div>
@@ -73,11 +90,12 @@
                                 on it at the moment, so stay tuned</p>
                         </div>
                     </a>
-                     <a href="https://github.com/noxan-dev/Garden-Planner">
+                    <a href="https://github.com/noxan-dev/Garden-Planner">
                         <div class="p-3 shadow-md shadow-current lg:hover:shadow-current lg:hover:shadow-lg rounded-md bg-[#16161a] h-full">
                             <h3 class="text-center">OCD at work. Carry on</h3>
                             <hr class="border-b-1 rounded bg-gray-600 border-gray-600 mx-auto">
-                            <p>Try fluffing blueberries stew blended with bourbon. Gar, yer not marking me without a beauty!</p>
+                            <p>Try fluffing blueberries stew blended with bourbon. Gar, yer not marking me without a
+                                beauty!</p>
                         </div>
                     </a>
                 </div>
@@ -92,9 +110,54 @@
     <section id="gallery" class="bg-[#16161a]">
         <div class="px-10 pt-5 lg:px-20 lg:py-28 h-full">
             <div class="md:pl-24 lg:pr-24 lg:max-w-lg text-center">
-                <h1 class="text-center">Gallery</h1>
+                <h1>Gallery</h1>
+                <div class="p-3 shadow-md shadow-current rounded-md bg-[#242629] lg:hover:animate-bounce">
+                    <p>In addition to being a SE, I am a landscape <span
+                            class="underline decoration-wavy decoration-3 decoration-emerald-900 underline-offset-4">photographer</span>
+                        passionate about capturing the best moments of life and using them to inspire my work.
+                    </p>
+                    <p>I also enjoy being outside and exploring new places.</p>
+                </div>
                 <p class="pb-16">Site in maintenance mode. Come back later for more</p>
             </div>
         </div>
     </section>
+    <footer id="contact" class="bg-[#242629]">
+        <div class="px-5 py-16">
+            <div class="grid gap-y-5 auto-rows-auto grid-flow-rows text-center place-items-center">
+                <div>
+                    <p>Connect</p>
+                    <hr class="border-b-2 rounded bg-gray-600 border-gray-600 mx-auto w-20">
+                </div>
+                <div id="contact-form">
+                    <form method="post" action="{{ url_for('redesign') }}">
+                        <div class="grid gap-5 auto-rows-auto lg:grid-cols-2 lg:grid-flow-row w-fit">
+                            <div class="lg:col-span-1">
+                                <label for="name" class="text-sm"></label>
+                                <input type="text" name="name" id="name"
+                                       class=" p-2 border-b-2 border-gray-600 rounded-md" placeholder="Name">
+                            </div>
+                            <div class="lg:col-span-1">
+                                <label for="email" class="text-sm"></label>
+                                <input type="email" name="email" id="email"
+                                       class=" p-2 border-b-2 border-gray-600 rounded-md" placeholder="Email">
+                            </div>
+                            <div class="lg:col-span-2">
+                                <label for="message" class="text-sm"></label>
+                                <textarea name="message" id="message" class=" p-2 border-b-2 border-gray-600 rounded-md"
+                                          placeholder="Add your Message here"></textarea>
+                            </div>
+                            <div class="lg:col-span-2">
+                                <button type="submit"
+                                        class="p-3 bg-[#7f5af0] text-[#fffffe] shadow-md shadow-black lg:hover:shadow-black lg:hover:shadow-lg lg:active:shadow-inner lg:active:shadow-black rounded-md">
+                                    Contact
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <p class="text-sm inset-x-0 bottom-0 top-full">Noxan &copy; {{ year }}</p>
+            </div>
+        </div>
+    </footer>
 {% endblock content %}
