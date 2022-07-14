@@ -52,7 +52,7 @@ def redesign():
                 smtp.login(MAIL_USERNAME, MAIL_PASSWORD)
                 smtp.sendmail(from_addr=email,
                               to_addrs=MAIL_USERNAME,
-                              msg='Subject: New Message from {}\n\n{}'.format(name, message)
+                              msg='Subject: New Message from {}\n\n{}\n{}'.format(name, message, email)
                               )
             flash('Message sent!')
             return redirect(url_for('redesign'))
