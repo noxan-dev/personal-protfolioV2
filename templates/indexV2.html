@@ -18,7 +18,7 @@
         {% endwith %}
         </div>
         <div class="main px-5 py-28 grid gap-5 grid-rows-auto grid-flow-rows lg:grid-cols-auto lg:grid-flow-col h-fit w-full place-items-center">
-            <div class="w-50 h-50 lg:w-96 lg:h-96">
+            <div class="w-50 h-50 lg:w-96 lg:h-96 overflow-hidden">
                 <img src="{{ url_for('static', filename='images/headshot.jpg') }}"
                      class="border-8 border-dashed lg:hover:border-solid border-violet-900 rounded-full" alt="headshot">
             </div>
@@ -130,22 +130,22 @@
                     <p>Connect</p>
                     <hr class="border-b-2 rounded bg-gray-600 border-gray-600 mx-auto w-20">
                 </div>
-                <div id="contact-form">
-                    <form method="post" action="{{ url_for('redesign') }}">
+                <div id="contact-form" class="">
+                    <form class="" method="post" action="{{ url_for('redesign') }}">
                         <div class="grid gap-5 auto-rows-auto lg:grid-cols-2 lg:grid-flow-row w-fit">
                             <div class="lg:col-span-1">
                                 <label for="name" class="text-sm"></label>
                                 <input type="text" name="name" id="name"
-                                       class=" p-2 border-b-2 border-gray-600 rounded-md" placeholder="Name">
+                                       class="w-64 h-12 p-2 border-b-2 border-gray-600 rounded-md" placeholder="Name">
                             </div>
                             <div class="lg:col-span-1">
                                 <label for="email" class="text-sm"></label>
                                 <input type="email" name="email" id="email"
-                                       class=" p-2 border-b-2 border-gray-600 rounded-md" placeholder="Email">
+                                       class="w-64 h-12 p-2 border-b-2 border-gray-600 rounded-md" placeholder="Email">
                             </div>
                             <div class="lg:col-span-2">
                                 <label for="message" class="text-sm"></label>
-                                <textarea name="message" id="message" class=" p-2 border-b-2 border-gray-600 rounded-md"
+                                <textarea name="message" id="message" class="w-80 h-40 p-3 border-b-2 border-gray-600 rounded-md"
                                           placeholder="Add your Message here"></textarea>
                             </div>
                             <div class="lg:col-span-2">
