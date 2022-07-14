@@ -6,7 +6,8 @@
 
 {% block content %}
     <section id="introduction" class="bg-[#16161a]">
-        {% with messages = get_flashed_messages() %}
+        <div id="success-message" class="">
+            {% with messages = get_flashed_messages() %}
             {% if messages %}
                 <ul class=flashes>
                     {% for message in messages %}
@@ -15,7 +16,7 @@
                 </ul>
             {% endif %}
         {% endwith %}
-
+        </div>
         <div class="main px-5 py-28 grid gap-5 grid-rows-auto grid-flow-rows lg:grid-cols-auto lg:grid-flow-col h-fit w-full place-items-center">
             <div class="w-50 h-50 lg:w-96 lg:h-96">
                 <img src="{{ url_for('static', filename='images/headshot.jpg') }}"

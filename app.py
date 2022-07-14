@@ -3,12 +3,16 @@ from flask_caching import Cache
 from datetime import datetime
 import os
 import requests
-
+import smtplib
 
 cache = Cache(config={'CACHE_TYPE': 'simple'})
 app = Flask(__name__)
 cache.init_app(app)
 app.config['SECRET_KEY'] = os.environ['SECRET_KEY']
+
+MAIL_USERNAME = 'chaimmalek@gmail.com'
+MAIL_PASSWORD = os.environ['MAIL_PASSWORD']
+
 
 # parmas = {
 #     'client_id': '5596470317044314',
@@ -36,13 +40,20 @@ def redesign():
     year = datetime.now().year
 
     if request.method == 'POST':
-        name = request.form['name']
-        email = request.form['email']
-        message = request.form['message']
+        name = request.form.get('name')
+        email = request.form.get('email')
+        message = request.form.get('message')
         if name == '' or email == '' or message == '':
             flash('Please fill in all fields.')
             return redirect(url_for('redesign'))
         else:
+            with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
+                smtp.starttls()
+                smtp.login(MAIL_USERNAME, MAIL_PASSWORD)
+                smtp.sendmail(from_addr=email,
+                              to_addrs=MAIL_USERNAME,
+                              msg='Subject: New Message from {}\n\n{}'.format(name, message)
+                              )
             flash('Message sent!')
             return redirect(url_for('redesign'))
     return render_template('indexV2.html', year=year)
