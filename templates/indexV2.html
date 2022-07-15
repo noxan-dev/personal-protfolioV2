@@ -8,19 +8,19 @@
     <section id="introduction" class="bg-[#16161a]">
         <div id="success-message" class="">
             {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                <ul class=flashes>
-                    {% for message in messages %}
-                        <li><p class="text-center">{{ message }}</p></li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-        {% endwith %}
+                {% if messages %}
+                    <ul class=flashes>
+                        {% for message in messages %}
+                            <li><p class="text-center">{{ message }}</p></li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
         </div>
         <div class="main px-5 py-28 grid gap-5 grid-rows-auto grid-flow-rows lg:grid-cols-auto lg:grid-flow-col h-fit w-full place-items-center">
-            <div class="w-50 h-50 lg:w-96 lg:h-96 overflow-hidden">
+            <div class="w-50 h-50 lg:w-96 lg:h-fit">
                 <img src="{{ url_for('static', filename='images/headshot.jpg') }}"
-                     class="border-8 border-dashed lg:hover:border-solid border-violet-900 rounded-full" alt="headshot">
+                     class="border-4 border-dashed lg:hover:border-solid border-black rounded-full" alt="headshot">
             </div>
             <div class="intro-text text-center lg:px-14 lg:max-w-xl">
                 <h1>Hello, I'm <span
@@ -39,24 +39,28 @@
                                 I am a <span
                                     class="underline decoration-wavy decoration-3 decoration-blue-800 underline-offset-4">Software Engineer</span>
                                 who is enthusiastic about developing attractive and functional
-                                websites and programs. Thank you for dropping by. さよなら ✌🏻
+                                websites and programs. Thank you for dropping by.
                             </p>
                             <p class="italic text-[8px] invisible lg:visible">(psst click me)</p>
                         </div>
                         <div class="text-center pt-5 grid gap-5 auto-cols-auto grid-flow-col">
-                            <p><a href="https://www.linkedin.com/in/chaimmalek/"><i
-                                    class="bi bi-linkedin text-white md:hover:bg-transparent hover:text-gray-400"
-                                    title="Linkedin"></i></a></p>
-                            <p><a href="https://github.com/noxan-dev"><i
-                                    class="bi bi-github text-white md:hover:bg-transparent hover:text-gray-400"
-                                    title="Github"></i></a></p>
-                            <p><a href="https://www.instagram.com/cma1ek/"><i
-                                    class="bi bi-instagram text-white md:hover:bg-transparent hover:text-gray-400"
-                                    title="Instagram"></i></a></p>
+                            <p><a class="text-white md:hover:bg-transparent hover:text-gray-400"
+                                  href="https://www.linkedin.com/in/chaimmalek/" title="Linkedin">
+                                <ion-icon name="logo-linkedin"></ion-icon>
+                            </a></p>
+                            <p><a class="text-white md:hover:bg-transparent hover:text-gray-400"
+                                  href="https://github.com/noxan-dev" title="Github">
+                                <ion-icon name="logo-github"></ion-icon>
+                            </a></p>
+                            <p><a class="text-white md:hover:bg-transparent hover:text-gray-400"
+                                  href="https://www.instagram.com/cma1ek/" title="Instagram">
+                                <ion-icon name="logo-instagram"></ion-icon>
+                            </a></p>
                             <p>
-                                <a href="https://docs.google.com/document/d/e/2PACX-1vRSF8SVTkfuoKIszoOgRfr4_WnmSvEcY9hjnSbF7OGKOH5hFdSik9U65miZKM5b4g/pub"><i
-                                        class="bi bi-file-person text-white md:hover:bg-transparent hover:text-gray-400"
-                                        title="Resume"></i>
+                                <a class="text-white md:hover:bg-transparent hover:text-gray-400"
+                                   href="https://docs.google.com/document/d/e/2PACX-1vRSF8SVTkfuoKIszoOgRfr4_WnmSvEcY9hjnSbF7OGKOH5hFdSik9U65miZKM5b4g/pub"
+                                   title="Resume">
+                                    <ion-icon name="document-outline"></ion-icon>
                                 </a></p>
                         </div>
                     </div>
@@ -75,8 +79,8 @@
                             <p>Working to create a language learning platform through the use of gaming.</p>
                         </div>
                     </a>
-                    <a href="https://github.com/noxan-dev/Garden-Planner">
-                        <div class="p-3 shadow-md shadow-current lg:hover:shadow-current lg:hover:shadow-lg rounded-md bg-[#16161a] h-full">
+                    <a href="https://github.com/noxan-dev/Garden-Planner" class="col-span-2 h-fit">
+                        <div class="p-3 shadow-md shadow-current lg:hover:shadow-current lg:hover:shadow-lg rounded-md bg-[#16161a]">
                             <h3 class="text-center">Garden Planner @ Personal Project</h3>
                             <hr class="border-b-1 rounded bg-gray-600 border-gray-600 mx-auto">
                             <p>A tool to help plan and plant your vegetable garden. Not much at the moment but I'm
@@ -91,28 +95,21 @@
                                 on it at the moment, so stay tuned</p>
                         </div>
                     </a>
-                    <a href="https://github.com/noxan-dev/Garden-Planner">
-                        <div class="p-3 shadow-md shadow-current lg:hover:shadow-current lg:hover:shadow-lg rounded-md bg-[#16161a] h-full">
-                            <h3 class="text-center">OCD at work. Carry on</h3>
-                            <hr class="border-b-1 rounded bg-gray-600 border-gray-600 mx-auto">
-                            <p>Try fluffing blueberries stew blended with bourbon. Gar, yer not marking me without a
-                                beauty!</p>
-                        </div>
-                    </a>
+
                 </div>
             </div>
             <div class="place-self-center text-center order-1">
                 <div class="lg:px-24 lg:max-w-lg">
-                    <h1>Things I'm working on</h1>
+                    <h1>Current Active Projects</h1>
                 </div>
             </div>
         </div>
     </section>
     <section id="gallery" class="bg-[#16161a]">
         <div class="px-10 pt-5 lg:px-20 lg:py-28 h-full">
-            <div class="md:pl-24 lg:pr-24 lg:max-w-lg text-center">
+            <div class="md:pl-24 lg:pr-24 lg:max-w-lg text-center lg:hover:animate-bounce">
                 <h1>Gallery</h1>
-                <div class="p-3 shadow-md shadow-current rounded-md bg-[#242629] lg:hover:animate-bounce">
+                <div class="p-3 shadow-md shadow-current rounded-md bg-[#242629]">
                     <p>In addition to being a SE, I am a landscape <span
                             class="underline decoration-wavy decoration-3 decoration-emerald-900 underline-offset-4">photographer</span>
                         passionate about capturing the best moments of life and using them to inspire my work.
@@ -145,7 +142,8 @@
                             </div>
                             <div class="lg:col-span-2">
                                 <label for="message" class="text-sm"></label>
-                                <textarea name="message" id="message" class="w-80 h-40 p-3 border-b-2 border-gray-600 rounded-md"
+                                <textarea name="message" id="message" rows="6" cols="40"
+                                          class="p-3 border-b-2 border-gray-600 rounded-md"
                                           placeholder="Add your Message here"></textarea>
                             </div>
                             <div class="lg:col-span-2">
