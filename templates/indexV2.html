@@ -17,8 +17,8 @@
                 {% endif %}
             {% endwith %}
         </div>
-        <div class="main px-5 py-28 grid gap-5 auto-rows-auto grid-flow-row lg:auto-cols-auto lg:grid-flow-col h-fit w-full place-items-center">
-            <div class="intro-text text-center lg:px-14 lg:max-w-xl">
+        <div class="main px-5 py-16 grid gap-5 auto-rows-auto grid-flow-row lg:auto-cols-auto lg:grid-flow-col h-fit w-full place-items-center">
+            <div class="intro-text text-center lg:py-10 lg:px-14 lg:max-w-xl">
                 <h1>Hello, I'm <span
                         class="animate-[pulse_4s_ease-in-out_infinite] underline decoration-wavy decoration-4 decoration-purple-900 underline-offset-4">Chaim</span>.
                 </h1>
@@ -65,36 +65,35 @@
         </div>
     </section>
     <section id="work" class="bg-[#242629]">
-        <div class="px-5 py-16 grid gap-5 grid-rows-auto grid-flow-rows lg:grid-cols-auto lg:grid-flow-col h-fit">
-            <div class="place-self-center order-2 lg:order-1">
-                <div class="grid gap-10 grid-rows-auto grid-flow-rows lg:grid-cols-auto lg:grid-rows-2 lg:grid-flow-col max-w-2xl lg:ml-16">
+        <div class="px-5 py-16 grid gap-5 auto-rows-auto grid-flow-row lg:auto-cols-auto lg:grid-flow-col place-items-center">
+            <div class="order-2 lg:order-1 py-10">
+                <div class="grid gap-10 auto-rows-auto grid-flow-row lg:grid-cols-2 lg:grid-flow-row max-w-2xl">
                     <a href="https://www.yeshivaesports.com">
-                        <div class="p-3 shadow-md shadow-current lg:hover:shadow-current lg:hover:shadow-lg rounded-md bg-[#16161a] h-full w-full">
+                        <div class="p-3 shadow-md shadow-current lg:hover:shadow-current lg:hover:shadow-lg rounded-md bg-[#16161a] h-full">
                             <h3 class="text-center">Freelance Software Engineer @ Yeshiva Esports</h3>
                             <hr class="border-b-1 rounded bg-gray-600 border-gray-600 mx-auto">
                             <p>Working to create a language learning platform through the use of gaming.</p>
                         </div>
                     </a>
-                    <a href="https://github.com/noxan-dev/Garden-Planner" class="col-span-2 h-fit">
-                        <div class="p-3 shadow-md shadow-current lg:hover:shadow-current lg:hover:shadow-lg rounded-md bg-[#16161a] h-full w-full">
-                            <h3 class="text-center">Garden Planner @ Personal Project</h3>
-                            <hr class="border-b-1 rounded bg-gray-600 border-gray-600 mx-auto">
-                            <p>A tool to help plan and plant your vegetable garden. Not much at the moment but I'm
-                                excited to keep working on it</p>
-                        </div>
-                    </a>
                     <a href="#">
-                        <div class="p-3 shadow-md shadow-current lg:hover:shadow-current lg:hover:shadow-lg rounded-md bg-[#16161a] h-full w-full">
+                        <div class="p-3 shadow-md shadow-current lg:hover:shadow-current lg:hover:shadow-lg rounded-md bg-[#16161a]">
                             <h3 class="text-center">Unnamed Social Media Platform</h3>
                             <hr class="border-b-1 rounded bg-gray-600 border-gray-600 mx-auto">
                             <p>A thought a friend of mine had that I would like to bring to life. Don't have information
                                 on it at the moment, so stay tuned</p>
                         </div>
                     </a>
-
+                    <a href="https://github.com/noxan-dev/Garden-Planner" class="lg:col-span-2 h-fit">
+                        <div class="p-3 shadow-md shadow-current lg:hover:shadow-current lg:hover:shadow-lg rounded-md bg-[#16161a]">
+                            <h3 class="text-center">Garden Planner @ Personal Project</h3>
+                            <hr class="border-b-1 rounded bg-gray-600 border-gray-600 mx-auto">
+                            <p>A tool to help plan and plant your vegetable garden. Not much at the moment but I'm
+                                excited to keep working on it</p>
+                        </div>
+                    </a>
                 </div>
             </div>
-            <div class="place-self-center text-center order-1">
+            <div class="text-center order-1">
                 <div class="lg:px-24 lg:max-w-lg">
                     <h1>Current Active Projects</h1>
                 </div>
@@ -103,7 +102,7 @@
     </section>
     <section id="gallery" class="bg-[#16161a]">
         <div class="px-5 py-16 grid gap-16 lg:grid-cols-2">
-            <div class="grid gap-5 auto-rows-auto grid-flow-row lg:pr-24 lg:max-w-lg justify-self-center lg:mt-28 w-fit h-fit place-items-center">
+            <div class="grid gap-5 auto-rows-auto lg:pr-24 lg:max-w-lg justify-self-center lg:mt-28 w-fit h-fit place-items-center">
                 <h1>Gallery</h1>
                 <div class="p-3 shadow-md shadow-current rounded-md bg-[#242629]">
                     <p>In addition to being a SE, I am a landscape <span
@@ -124,7 +123,7 @@
                     </a>
                 </div>
             </div>
-            <div class="grid gap-5 grid-cols-2 grid-flow-row w-fit place-self-center">
+            <div class="grid gap-5 grid-cols-2 grid-flow-row place-self-center py-10">
                 <h2 class="text-center col-span-2">Latest Images</h2>
                 <img class="lg:h-[25rem]"
                      src="{{ url_for('static', filename=('images/gallery/V-Chaim-Malek-#5149-4.jpg')) }}" alt="">
@@ -139,7 +138,7 @@
     </section>
     <footer id="contact" class="bg-[#242629]">
         <div class="px-5 pt-16 pb-2">
-            <div class="grid gap-y-5 auto-rows-auto grid-flow-rows text-center place-items-center">
+            <div class="grid gap-5 auto-rows-auto text-center place-items-center">
                 <div>
                     <p>Connect</p>
                     <hr class="border-b-2 rounded bg-gray-600 border-gray-600 mx-auto w-20">

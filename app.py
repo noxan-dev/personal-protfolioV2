@@ -1,8 +1,8 @@
-from flask import Flask, render_template, flash, redirect, url_for, request, session
-from flask_caching import Cache
-from datetime import datetime
 import os
 import smtplib
+from flask import Flask, render_template, flash, redirect, url_for, request
+from flask_caching import Cache
+from datetime import datetime
 
 
 UPLOAD_FOLDER = os.path.join('static', 'images/gallery')
@@ -79,9 +79,8 @@ def allowed_file(filename):
 
 
 @app.route('/gallery')
-# @cache.cached(timeout=60)
+@cache.cached(timeout=60)
 def gallery():
-    # TODO: Display all images in a gallery
     images_file = os.listdir(app.config['UPLOAD_FOLDER'])
     return render_template('gallery.html', images=images_file)
 
