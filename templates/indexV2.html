@@ -102,7 +102,7 @@
         </div>
     </section>
     <section id="gallery" class="bg-[#16161a]">
-        <div class="px-5 py-16 grid lg:grid-cols-2">
+        <div class="px-5 py-16 grid gap-16 lg:grid-cols-2">
             <div class="grid gap-5 auto-rows-auto grid-flow-row lg:pr-24 lg:max-w-lg justify-self-center lg:mt-28 w-fit h-fit place-items-center">
                 <h1>Gallery</h1>
                 <div class="p-3 shadow-md shadow-current rounded-md bg-[#242629]">
@@ -112,32 +112,33 @@
                     </p>
                     <p>I also enjoy being outside and exploring new places.</p>
                 </div>
-                <div class="grid gap-5 grid-cols-3 text-center w-fit h-fit">
+                <div class="grid gap-5 grid-cols-3 text-center w-fit h-fit place-items-center">
                     <button class="p-3 bg-[#7f5af0] text-[#fffffe] shadow-md shadow-black lg:hover:shadow-black lg:hover:shadow-lg lg:active:shadow-inner lg:active:shadow-black rounded-md">
                         <a href="{{ url_for('gallery') }}" title="Instagram">View Gallery</a>
                     </button>
                     <p>or</p>
-                    <p><a class="text-white md:hover:bg-transparent hover:text-gray-400 w-fit h-fit"
-                          href="https://www.instagram.com/cma1ek/" title="Instagram">
-                        <ion-icon name="logo-instagram"></ion-icon>
-                    </a></p>
+                    <a href="https://www.instagram.com/cma1ek/" title="Instagram">
+                        <button class="text-white md:hover:bg-transparent hover:text-gray-400 w-fit h-fit">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </button>
+                    </a>
                 </div>
             </div>
             <div class="grid gap-5 grid-cols-2 grid-flow-row w-fit place-self-center">
                 <h2 class="text-center col-span-2">Latest Images</h2>
-                <img class="h-[25rem]"
+                <img class="lg:h-[25rem]"
                      src="{{ url_for('static', filename=('images/gallery/V-Chaim-Malek-#5149-4.jpg')) }}" alt="">
-                <img class="h-[25rem]"
+                <img class="lg:h-[25rem]"
                      src="{{ url_for('static', filename=('images/gallery/V-Chaim-Malek-#5149-1.jpg')) }}" alt="">
-                <img class="h-[25rem]"
+                <img class="lg:h-[25rem]"
                      src="{{ url_for('static', filename=('images/gallery/V-Chaim-Malek-#5149-2.jpg')) }}" alt="">
-                <img class="h-[25rem]"
+                <img class="lg:h-[25rem]"
                      src="{{ url_for('static', filename=('images/gallery/V-Chaim-Malek-#5149-3.jpg')) }}" alt="">
             </div>
         </div>
     </section>
     <footer id="contact" class="bg-[#242629]">
-        <div class="px-5 py-16">
+        <div class="px-5 pt-16 pb-2">
             <div class="grid gap-y-5 auto-rows-auto grid-flow-rows text-center place-items-center">
                 <div>
                     <p>Connect</p>
