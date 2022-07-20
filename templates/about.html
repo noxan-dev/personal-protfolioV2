@@ -11,14 +11,21 @@
             <div class="grid gap-5 auto-rows-auto grid-flow-row lg:max-w-sm text-center place-items-center">
                 <div class="w-50 h-50 lg:w-96 lg:h-fit">
                     <img src="{{ url_for('static', filename='images/headshot.jpg') }}"
-                     class="border-4 border-dashed lg:hover:border-solid border-black rounded-full" alt="headshot">
+                         class="border-4 border-dashed lg:hover:border-solid border-black rounded-full" alt="headshot">
                 </div>
                 <h1 class="text-center">About Me, not from me</h1>
+
                 <p>Don't take my work for it</p>
                 <p class="text-center"> In the near future we'll have something cool about this guy</p>
             </div>
-            <div>
+            <div class="max-w-lg">
                 <h1 class="text-center">My Skills</h1>
+                <p>My name is Chaim pronounced (kh AA y uh m) it's a Hebrew word, חיים, meaning life or to be alive,
+                    commonly associated with l'chaim (to life) when a toast is being made. </p>
+                <div class="audio w-1/2">
+                    <audio controls class="w-full" src="{{ url_for('static', filename='files/name.mp3') }}"></audio>
+                </div>
+
             </div>
         </div>
     </section>
