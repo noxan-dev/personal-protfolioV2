@@ -5,18 +5,18 @@
 
 
 {% block content %}
-    <section id="gallery" class="bg-[#16161a]">
-        <div class="px-5 py-5">
-            <h1>Gallery</h1>
-            <div class="image grid gap-5 lg:grid-cols-5 lg:grid-flow-row inline-grid">
-                {% for image in images %}
-                    <div class="image-container">
-                        <img class="" src="{{ url_for('static', filename='images/gallery/'+ image) }}"
-                             alt="gallery-image">
-                    </div>
-                {% endfor %}
+<section id="gallery" class="bg-[#16161a]">
+    <div class="px-5 py-10 lg:py-16">
+        <h1>Gallery</h1>
+        <div class="image grid gap-5 lg:grid-cols-5 lg:grid-flow-row inline-grid">
+            {% for image in images %}
+            <div class="image-container">
+                <img class="" src="{{ url_for('static', filename='images/gallery/'+ image) }}"
+                     alt="gallery-image">
             </div>
+            {% endfor %}
         </div>
-    </section>
+    </div>
+</section>
 
 {% endblock content %}

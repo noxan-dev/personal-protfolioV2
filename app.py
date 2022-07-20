@@ -5,17 +5,11 @@ from flask_caching import Cache
 from datetime import datetime
 
 
-UPLOAD_FOLDER = os.path.join('static', 'images/gallery')
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
-
-
 cache = Cache(config={'CACHE_TYPE': 'simple'})
 app = Flask(__name__)
 cache.init_app(app)
 
-app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 app.config['SECRET_KEY'] = os.environ['SECRET_KEY']
-
 
 MAIL_USERNAME = 'chaimmalek@gmail.com'
 MAIL_PASSWORD = os.environ['MAIL_PASSWORD']
@@ -62,26 +56,10 @@ def about():
     return render_template('about.html')
 
 
-def allowed_file(filename):
-    return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
-
-# @app.route('/upload', methods=['GET', 'POST'])
-# def upload():
-#     # TODO: make so I can only upload an image
-#     # TODO: Add a delete option
-#     if request.method == 'POST' and 'photo' in request.files:
-#         photos.save(request.files['photo'])
-#         flash("Photo saved.")
-#         return redirect(url_for('redesign'))
-#     return render_template('upload.html')
-
-
 @app.route('/gallery')
 @cache.cached(timeout=60)
 def gallery():
-    images_file = os.listdir(app.config['UPLOAD_FOLDER'])
+    images_file = os.listdir('./static/images/gallery')
     return render_template('gallery.html', images=images_file)
 
 
